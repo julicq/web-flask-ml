@@ -34,6 +34,7 @@ model_data = {
     "optimizer": "adam",
     "epochs": 100,
     "batchsize": 32,
+    "model" : load_model('lenet.h5'),
 }
 
 train_status = {
@@ -129,13 +130,13 @@ app.layout = html.Div(
                 ]),
                 html.Div(children=[
                     html.Div(id="epochdisplay"),
-                    # dcc.Slider(1, 200, 1, marks={1: "1", 100: "100", 200: "200"},
-                    #            value=model_data["epochs"], id="epochs"),
+                    dcc.Slider(1, 200, 1, marks={1: "1", 100: "100", 200: "200"},
+                               value=model_data["epochs"], id="epochs"),
                 ]),
                 html.Div(children=[
                     html.Div(id="batchdisplay"),
-                    # dcc.Slider(1, 128, 1, marks={1: "1", 128: "128"},
-                    #            value=model_data["batchsize"], id="batchsize"),
+                    dcc.Slider(1, 128, 1, marks={1: "1", 128: "128"},
+                               value=model_data["batchsize"], id="batchsize"),
                 ]),
             ]
         ),
